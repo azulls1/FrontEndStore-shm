@@ -1,0 +1,258 @@
+:root{
+
+  /*Primera paleta de colores  --Bayas Azules--*/
+    /*
+    --primario: #1E1F26;
+    --primarioOscuro: #283655;
+    --secundario: #4D648D;
+    --secundarioOscuro: #D0E1F9;
+    --blanco: #fff;
+    --negro: #000;
+    */
+
+    /*Segunda paleta de colores  --Verdes Nebulosos--*/
+    --primario: #04202C;
+    --primarioOscuro: #304040;
+    --secundario: #5B7065;
+    --secundarionav: #fff;
+    --secundarioOscuro: #C9D1C8;
+    --blanco: #fff;
+    --colortxtnav: #5B7065;
+    --negro: #000;
+
+    --fuentePrincipal: font-family: 'Staatliches', cursive;
+}
+/*todo lo contenido en el html se aplicara en general, siempre usar esto*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/*lo usamos para que se puedan usar los rem y se ajuste a cualquier dispositivo*/
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /*Globales*/
+  body {
+    background-color: var(--primario);/*color de fondo dentro de la pagina*/
+    font-size: 1.6rem;/*tamaño de la letra*/
+    line-height: 1.5;/*da un interlineado a todo nuestro texto */
+  }
+
+  p {
+    font-size: 1.8rem;/*el tamaño de la fuente para los parrafos es de 18 px*/
+    font-family: Arial, Helvetica, sans-serif;/*la fuente de para el texto la predefinimos */
+    color: var(--blanco) ;/*color de la letra para los parrafos la ponemos en blanco*/
+  }
+
+  a {
+    text-decoration: none;/*quitamos el decorado por default de los enlaces, la liena que muestra por defecto*/
+  }
+
+  img{
+    width: 100%;/* definimos que tome el 100% de ancho en las imagenes */
+  }
+
+  .contenedor {
+    max-width: 120rem;/*definimos un contenedor que tendra un maximo de ancho de 1200px*/
+    margin: 0 auto;/* alineamos el contenedor al centro*/
+  }
+
+  h1, h2, h3{
+    text-align: center;/*alineamos los textos de h1,h2,h3 al centro*/
+    color: var(--secundario);/*designamos un color para los textos*/
+    font-family: var(--fuentePrincipal);/*usamos la varibale global para la fuente que tendra los h1,h2,h3*/
+  }
+
+  h1 {
+    font-size: 4rem;/*definimos un tamaño de 40px*/
+  }
+
+  h2 {
+    font-size: 3.2rem;/*definimos un tamaño de 32px*/
+  }
+
+  h3 {
+    font-size: 2.4rem;/*definimos un tamaño de 24px*/
+  }
+
+  /*Header*/
+  .header{
+    display: flex;/*alinea todo en linea*/
+    justify-content: center;/*alineamos al centro*/
+  }
+
+  .header__logo{
+    margin: 3rem 0;/*permite crear margenes primero es el eje x y luego el Y ejemplo arriba 3, derecha 0, abajo 3, izquierda0*/
+  }
+  /*Footer*/
+  .footer{
+    background-color: var(--primarioOscuro);/*camabimos el color del footer*/
+    padding: 1rem 0;/*le damos un grosor de 1 rem hacia arriba y abajo*/
+    margin-top: 2rem;/*lo separamos de la parte de arriba por 2 rem*/
+  }
+
+  .footer__texto{
+    font-family: var(--fuentePrincipal);/*aplicamos la fuente que es el estilo de la letra*/
+    text-align: center;/*alineamos al centro todo el texto*/
+    font-size: 2.2rem;/*aplicamos tamaño al texto de 2.2rem*/
+  }
+
+  /*navegador*/
+
+  .navegacion{
+    background-color: var(--primarioOscuro);/*asignamos un color de fondo al nav*/
+    padding: 1rem 0;/*creamos un ancho para el navegador arriba 10px, derecha 0px, abajo 10px, izquierda 0px*/
+    display: flex;/*alinea todo en una fila dentro del navegador*/
+    justify-content: center;/*alinea al centro todo lo que esta en el navegador*/
+    gap: 2rem;/*seapara los dos enlaces por 20px*/
+  }
+
+  .navegacion__enlace{
+    font-family: var(--fuentePrincipal);/*aplicamos la fuente principal al  a los enlaces*/
+    color: var(--colortxtnav);/*asiganmos un color al texto*/
+    font-size: 3rem;/*agregamos el tamaño de 30 px*/
+  }
+  
+  .navegacion__enlace--activo,/*creamos un elemento*/
+  .navegacion__enlace:hover {/*permite la seleccion del enlace*/
+    color: var(--secundarionav);/*cuando se clikea un enlace se cambia de color*/
+  }
+
+  /*Grid*/
+  .grid{
+    display: grid;/* te proporciona una cuadrícula de una sola columna*/
+    grid-template-columns: repeat(2, 1fr); /*muestra 2 columas con el mismo tamaño*/
+    gap: 2rem;/*permite la separacion de las columnas tanto de los laterales como de arriba y abajo*/
+  }
+
+  @media (min-width: 768px) {/*se mostrara en normal 3 columnas si es menor a 768px mostrara solo 2*/
+    .grid{
+    grid-template-columns: repeat(3, 1fr); /*muestra 3 columas con el mismo tamaño*/
+    }
+   }
+  /*productos*/
+  .producto{
+    background-color: var(--primarioOscuro); /*cambaimos el color que contiene a todo el producto o grid*/
+    padding: 1rem;/*se utiliza para generar espacio alrededor del contenido de un elemento, dentro de cualquier borde definido*/
+  }
+  
+  .producto__nombre{
+    font-size: 4rem; /*aplicamos un tamaño de 40px*/
+  }
+  .producto__precio{
+    font-size: 2.8rem;/*aplicamos al precio un tamaño de 28px*/
+    color: var(--secundario);/*aplicamos color al texto*/
+  }
+
+  .producto__nombre,
+  .producto__precio{
+    font-family: var(--fuentePrincipal);/* aplicamos el tipo de fuente o estilo de letra que queremos*/
+    margin: 1rem 0;/*damos margenes entre los textos de 1rem abajo y arriba y 0 de los laterales*/
+    text-align: center;/*alineamos al centro el texto*/
+    line-height: 1.2;/*aplicamos un interlineado de 12px*/
+  }
+
+  /*Grafico*/
+  .grafico{ 
+    min-height: 30rem;/*determinamos un minimo de altura de 30 px*/
+    background-repeat: no-repeat;/*declaramos que no se repitan las imagenes*/
+    background-size: cover;/*con esta propieda hace que la imagen tome todo el contenedor para que no deje espacios basios*/
+    grid-column: 1 / 3;/*toma da la columna 1 a la 3 */
+  }
+  .grafico--camisas{
+    grid-row: 2 / 3;/*acomoda el div en la fila de 2 al 3*/
+    background-image: url(../img/grafico1.jpg);/* insertamos la imagen para que se pueda visualizar*/
+  }
+
+  .grafico--node{
+    background-image:url(../img/grafico2.jpg);/*insertamos la imagen en node*/
+    grid-row: 8 / 9;/* toma como la fila de la 8 a la 9 en el grid cuando es menor de 768px */
+  }
+
+  @media (min-width: 768px) { /*mientras que sea mayor que esta cantidad de px se aplicara lo del codigo de lo contrario  ejecutara el codigo de arriba*/
+      .grafico--node{
+        grid-row: 5 / 6;/* toma de la fila 5 a la 6*/
+        grid-column: 2 / 4;/*  toma de la columa de la 2 a la 4*/
+      }
+   }
+
+   /*Seccion Nosotos*/
+   .nosotros{
+    display: grid; /*creamos el metodo grid que nos ayudara al posicionamiento*/
+    grid-template-rows: repeat(2, auto);/*se crean dos filas que se auto redimencionan*/
+   }
+   @media (min-width: 768px) {/*cuando es menor de 768 px no se aplicara el codigo interno de lo contrario se aplica*/
+       .nosotros{
+        grid-template-columns: repeat(2, 1fr);/*crea dos columas del mismo tamaño gracias al 1fr*/
+        column-gap: 2rem;/* se seaparan las columasn por 2rem = 20px*/
+       }
+    }
+   .nosotros_imagen{
+    grid-row: 1 / 2;/*posicionamos a la imagen en la fila  del 1 al 2*/
+   
+   }
+   @media (min-width: 768px) {/*cuando es menor de 768 px no se aplicara el codigo interno de lo contrario se aplica el codigo de arriba*/
+    .nosotros_imagen{
+      grid-column: 2 / 3;/*toma la posicin de la columna del 2 al 3*/
+      }  
+    }
+
+    /*Nosotors Bloques*/
+
+  .bloques{
+    display: grid; /*creamos el metodo grid para posicionar todo nuestro contenido*/
+    grid-template-columns: repeat(2, 1fr);/* creamos dos columas del mismo tamaño */
+    gap: 2rem;/* damos una separacion entre los contenidos de 2rem = 20px*/
+  }
+  @media (min-width: 768px) {/*cuando es menor de 768 px no se aplicara el codigo interno de lo contrario se aplica el codigo de arriba*/
+    .bloques{
+      grid-template-columns: repeat(4, 1fr);/*creamos 4 columas del mismo tamaño para el contenedo bloques*/
+    }
+   }
+  .bloque{
+    text-align: center;/* alineamos todo el contenido del bloque al centro esto incluye la imagen el h3 y el parafo*/
+  }
+
+  .bloque__titulo{
+    margin: 0;/*quitamos los amrgenes a el h3 que es el titutlo para que todo se vea mas unido */
+  }
+
+  
+  /** Pagina del Producto **/
+@media (min-width: 768px) {
+  .camisa {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+  }
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.formulario__campo {
+ border: 1rem solid var(--primarioOscuro);
+ background-color: transparent;
+ color: #336B87;
+ font-size: 2rem;
+ font-family: Arial, Helvetica, sans-serif;
+ padding: 1rem;
+ appearance: none;
+}
+
+.formulario__submit {
+  background-color: var(--secundario);
+  border: none;
+  font-size: 2rem;
+  font-family: var(--fuentePrincipal);
+  padding: 2rem;
+  transition: background-color .3s ease;
+  grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+  cursor: pointer;
+  background-color: var(--secundarioOscuro);
+}
